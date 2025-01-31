@@ -5,6 +5,7 @@ export const metadata: Metadata = {
     title: "UofA Robotics Association",
     description:
         "The University of Alberta Robotics Association is a dynamic group of innovators passionate about advancing robotics technology.",
+    metadataBase: new URL('https://uara.ca'),
     openGraph: {
         title: "University of Alberta Robotics Association",
         description:

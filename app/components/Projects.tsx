@@ -23,13 +23,12 @@ const projects = [
         url: "https://www.firstinspires.org/robotics/frc",
     },
     {
-        id: "ar",
-        title: "Augmented Reality Glasses",
-        category: "Electronics",
-        description:
-            "This project explores the creation of low-cost, DIY augmented reality glasses designed for accessibility and innovation. By integrating microdisplays, sensors, and open-source software, the glasses overlay digital information onto the real world, opening new possibilities for hands-on learning and everyday applications.",
-        images: ["/assets/projects/AR.jpg", "/assets/projects/AR Glasses.jpg"],
-        url: "https://www.youtube.com/watch?v=XfELJU1mRMg",
+        id: "projects",
+        title: "Student Projects",
+        category: "Robotics",
+        description: "Our organization aims to support student projects and research in robotics, electronics, and AI. Whether you're working on an innovative idea, looking for collaborators, or need resources to bring your project to life, we're here to help. If you have a project idea, reach out to us at ualbertarobotics@gmail.com or join us below to get in contact.",
+        images: ["/assets/projects/ElectronicsProject.jpg"],
+        url: "https://www.youtube.com/watch?v=XfELJU1mRMg"
     },
     {
         id: "education",
