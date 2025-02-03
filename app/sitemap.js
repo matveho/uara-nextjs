@@ -2,7 +2,7 @@ const staticRoutes = [
     "/",
     "/about",
     "/join-us",
-    "support-us",
+    "/support-us",
     "/calendar",
 ];
 
