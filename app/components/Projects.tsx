@@ -229,20 +229,20 @@ export default function Projects() {
                         onClick={handleClose}
                     >
                         <motion.div
-                            className="bg-[#231f20] max-w-4xl w-full rounded-3xl overflow-hidden shadow-lg relative mx-4 my-8 sm:mx-0 sm:my-0 sm:max-h-none sm:min-h-0"
+                            className="bg-[#231f20]  max-w-4xl w-full rounded-3xl overflow-hidden shadow-lg relative mx-4 my-8 sm:mx-0 sm:my-0 sm:max-h-none sm:min-h-0"
                             layoutId={`project-${selectedProject}`}
                             initial={{scale: 0.9}}
                             animate={{scale: 1}}
                             exit={{scale: 0.9}}
                             onClick={(e) => e.stopPropagation()} // Prevent clicks inside the modal from closing it
                         >
-                            <div className="relative bg-black">
+                            <div className="relative  bg-black">
                                 <motion.img
                                     src={
                                         projects.find((p) => p.id === selectedProject)?.images[currentImageIndex]
                                     }
                                     alt=""
-                                    className="mx-auto max-h-[40vh] md:max-h-[70vh] max-w-[100%] object-contain"
+                                    className="mx-auto max-h-[40vh] md:max-h-[50vh] max-w-[100%] object-contain"
 
                                     layoutId={`image-${selectedProject}`}
                                 />

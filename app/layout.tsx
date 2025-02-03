@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
+export const metadata = {
     title: "UofA Robotics Association",
     description:
         "The University of Alberta Robotics Association is a dynamic group of innovators passionate about advancing robotics technology.",
-    metadataBase: new URL('https://uara.ca'),
+    metadataBase: new URL("https://uara.ca"),
     openGraph: {
         title: "University of Alberta Robotics Association",
         description:
@@ -27,8 +27,15 @@ export const metadata: Metadata = {
         description:
             "Join the University of Alberta Robotics Association to explore innovation, creativity, and cutting-edge robotics technology.",
         images: ["/assets/Logo.png"],
-    }
+    },
+    alternates: {
+        canonical: "https://uara.ca",
+        languages: {
+            "en-US": "https://uara.ca/en",
+        },
+    },
 };
+
 
 export default function RootLayout({
    children,

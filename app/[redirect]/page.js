@@ -1,6 +1,10 @@
 import { redirect } from "next/navigation";
 
 const redirects = {
+    "en": "https://uara.ca/",
+    "about": "https://uara.ca/#about",
+    "join-us": "https://uara.ca/#students",
+    "support-us": "https://uara.ca/",
     "calendar": "https://calendar.google.com/calendar/u/1?cid=Y185ZWUyZDA2N2FiMWY2ZTI5MGJmNjJlYmFhN2EzZWZiZmM1MzQxMDhkNTNjZThlYzU4ZjM4MzA4MTNiZjM4YzE3QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20",
     "join": "https://discord.gg/QJkEjqW7zZ",
     "elko": "https://confluence.garage.ualberta.ca/category/train",
