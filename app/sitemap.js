@@ -1,5 +1,3 @@
-import { MetadataRoute } from "next";
-
 const staticRoutes = [
     "/",
     "/about",
