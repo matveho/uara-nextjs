@@ -11,7 +11,7 @@ export default function JoinUsSection() {
             const data = await response.json();
 
             if (data.region_code === "AB") {
-                window.location.href = "https://discord.gg/hTksjuVhJ2";
+                window.location.href = "https://discord.gg/QJkEjqW7zZ";
             } else {
                 setModalMessage(
                     "Unfortunately, you appear to be from outside of our local area. If you are connected to a VPN, please disconnect to continue. If this is a mistake, email us at ualbertarobotics@gmail.com."
