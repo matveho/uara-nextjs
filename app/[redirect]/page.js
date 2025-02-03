@@ -7,7 +7,7 @@ const redirects = {
     "e": 'https://eclass.srv.ualberta.ca/my/',
     "c": 'https://canvas.ualberta.ca/',
     "thundertech": "thundertechrobotics.ca",
-    "thundertechroboticsexposed": "https://www.youtube.com/watch?v=dQw4w9WgXc"
+    "thundertechroboticsexposed": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 };
 
 export default function RedirectPage({ params }) {
