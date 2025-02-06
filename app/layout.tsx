@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-    title: "UofA Robotics Association",
+    title: "UARA | University of Alberta Robotics Association",
     description:
-        "The University of Alberta Robotics Association is a dynamic group of innovators passionate about advancing robotics technology.",
+        "The UARA (University of Alberta Robotics Association) is a dynamic group of innovators passionate about advancing robotics technology.",
     metadataBase: new URL('https://uara.ca'),
     openGraph: {
-        title: "University of Alberta Robotics Association",
+        title: "UARA | University of Alberta Robotics Association",
         description:
-            "Join the University of Alberta Robotics Association to explore innovation, creativity, and cutting-edge robotics technology.",
+            "UARA is the University of Alberta Robotics Association, where students and innovators push the boundaries of robotics technology.",
         url: "https://uara.ca",
         images: [
             {
                 url: "/assets/Logo.png",
                 width: 1200,
                 height: 1200,
-                alt: "University of Alberta Robotics Association Logo",
+                alt: "UARA - University of Alberta Robotics Association Logo",
             },
         ],
         type: "website",

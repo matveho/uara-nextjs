@@ -5,13 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
     {
-        id: "rescue",
-        title: "RoboCup Rescue Subteam",
+        id: "aegis-arm",
+        title: "Aegis Robotic Arm",
         category: "Robotics",
         description:
-            "Our RoboCup Rescue Robotics team focuses on designing and developing autonomous robots capable of navigating disaster scenarios to assist in search and rescue operations. Through cutting-edge research in robotics, AI, and control systems, the team competes globally to push the boundaries of rescue technology and inspire innovation.",
-        images: ["/assets/projects/RoboCup.jpg", "/assets/projects/RoboCup2.jpg"],
-        url: "https://rescuesim.robocup.org/",
+            "The Aegis Robotic Arm is a 6DoF robotic arm designed for precision manipulation and advanced motion control. Our initial prototype, standing at 60cm, is based on the Thor robotic arm design and serves as a testbed for kinematics, control algorithms, and real-world automation challenges. As we refine our design, we aim to scale up to a full-scale, industrial-grade metal version, pushing the limits of student-led engineering and robotics research.",
+        images: ["/assets/projects/RoboticArmStock.jpg"],
+        url: "https://uara.ca/",
     },
     {
         id: "frc",
@@ -39,8 +39,6 @@ const projects = [
         images: ["/assets/projects/Learning.jpg", "/assets/projects/Learning2.jpg"],
         url: "https://www.youtube.com/watch?v=XfELJU1mRMg",
     },
-
-
 
 ];
 
