@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { track } from '@vercel/analytics';
 
 export default function JoinUsSection() {
     const [showModal, setShowModal] = useState(false);
@@ -11,8 +12,10 @@ export default function JoinUsSection() {
             const data = await response.json();
 
             if (data.region_code === "AB") {
-                window.location.href = "https://discord.gg/hTksjuVhJ2";
+                track('Joined', {}, { flags: ['joined'] });
+                window.location.href = "https://discord.gg/QJkEjqW7zZ";
             } else {
+                track('Joined', {}, { flags: ['join failed'] });
                 setModalMessage(
                     "Unfortunately, you appear to be from outside of our local area. If you are connected to a VPN, please disconnect to continue. If this is a mistake, email us at ualbertarobotics@gmail.com."
                 );

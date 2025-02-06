@@ -27,8 +27,15 @@ export const metadata: Metadata = {
         description:
             "Join the University of Alberta Robotics Association to explore innovation, creativity, and cutting-edge robotics technology.",
         images: ["/assets/Logo.png"],
-    }
+    },
+    alternates: {
+        canonical: "https://uara.ca",
+        languages: {
+            "en-US": "https://uara.ca/en",
+        },
+    },
 };
+
 
 export default function RootLayout({
    children,
@@ -39,6 +46,7 @@ export default function RootLayout({
         <html lang="en">
             <body className="antialiased">
                 {children}
+                <Analytics />
             </body>
         </html>
     );
