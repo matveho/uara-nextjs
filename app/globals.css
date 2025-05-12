@@ -18,6 +18,17 @@
   }
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: #fff;
+  background: #333;
+}
+
+::selection {
+  color: #fff;
+  background: #333;
+}
+
+
 body {
   color: var(--foreground);
   background: var(--background);
