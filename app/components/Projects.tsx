@@ -4,14 +4,23 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
+    // {
+    //     id: "aegis-arm",
+    //     title: "Aegis Robotic Arm",
+    //     category: "Robotics",
+    //     description:
+    //         "The Aegis Robotic Arm is a 6DoF robotic arm designed for precision manipulation and advanced motion control. Our initial prototype, standing at 60cm, is based on the Thor robotic arm design and serves as a testbed for kinematics, control algorithms, and real-world automation challenges. As we refine our design, we aim to scale up to a full-scale, industrial-grade metal version, pushing the limits of student-led engineering and robotics research.",
+    //     images: ["/assets/projects/RoboticArmStock.jpg"],
+    //     url: "https://uara.ca/",
+    // },
     {
-        id: "aegis-arm",
-        title: "Aegis Robotic Arm",
-        category: "Robotics",
+        id: "flight_n_propulsio_team",
+        title: "Flight & Propulsion Team",
+        category: "Flight & Propulsion",
         description:
-            "The Aegis Robotic Arm is a 6DoF robotic arm designed for precision manipulation and advanced motion control. Our initial prototype, standing at 60cm, is based on the Thor robotic arm design and serves as a testbed for kinematics, control algorithms, and real-world automation challenges. As we refine our design, we aim to scale up to a full-scale, industrial-grade metal version, pushing the limits of student-led engineering and robotics research.",
-        images: ["/assets/projects/RoboticArmStock.jpg"],
-        url: "https://uara.ca/",
+            "Flight & Propulsion Team is dedicated to advancing aerospace technology through innovative projects. We focus on developing cutting-edge propulsion systems, including electric and hybrid engines, and exploring advanced flight control systems. Our team collaborates with industry partners and academic institutions to push the boundaries of aerospace engineering and contribute to the future of aviation.",
+        images: ["/assets/projects/Xaero_Masten.png", "/assets/projects/pulse_jet_projects.png"],
+        url: "propulsion/",
     },
     {
         id: "frc",

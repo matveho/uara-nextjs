@@ -1,0 +1,18 @@
+::-moz-selection { /* Code for Firefox */
+    color: #fff;
+    background: #333;
+  }
+  
+  ::selection {
+    color: #fff;
+    background: #333;
+  }
+
+
+.team_name {
+    font-family: var(--font-montserrat);
+    font-weight: 200;
+    font-size: 100px;
+}
+
+
