@@ -4,22 +4,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
-    // {
-    //     id: "aegis-arm",
-    //     title: "Aegis Robotic Arm",
-    //     category: "Robotics",
-    //     description:
-    //         "The Aegis Robotic Arm is a 6DoF robotic arm designed for precision manipulation and advanced motion control. Our initial prototype, standing at 60cm, is based on the Thor robotic arm design and serves as a testbed for kinematics, control algorithms, and real-world automation challenges. As we refine our design, we aim to scale up to a full-scale, industrial-grade metal version, pushing the limits of student-led engineering and robotics research.",
-    //     images: ["/assets/projects/RoboticArmStock.jpg"],
-    //     url: "https://uara.ca/",
-    // },
+
     {
         id: "flight_n_propulsio_team",
-        title: "Flight & Propulsion Team",
+        title: "Propulsion & Flight Systems Subteam",
         category: "Flight & Propulsion",
         description:
             "Flight & Propulsion Team is dedicated to advancing aerospace technology through innovative projects. We focus on developing cutting-edge propulsion systems, including electric and hybrid engines, and exploring advanced flight control systems. Our team collaborates with industry partners and academic institutions to push the boundaries of aerospace engineering and contribute to the future of aviation.",
-        images: ["/assets/projects/Xaero_Masten.png", "/assets/projects/pulse_jet_projects.png"],
+        images: ["/assets/propulsion/propulsionhero.jpg", "/assets/projects/pulse_jet_projects.png"],
         url: "propulsion/",
     },
     {
@@ -32,13 +24,22 @@ const projects = [
         url: "https://www.firstinspires.org/robotics/frc",
     },
     {
-        id: "projects",
-        title: "Student Projects",
+        id: "aegis-arm",
+        title: "Aegis Robotic Arm",
         category: "Robotics",
-        description: "Our organization aims to support student projects and research in robotics, electronics, and AI. Whether you're working on an innovative idea, looking for collaborators, or need resources to bring your project to life, we're here to help. If you have a project idea, reach out to us at ualbertarobotics@gmail.com or join us below to get in contact.",
-        images: ["/assets/projects/ElectronicsProject.jpg"],
-        url: "https://www.youtube.com/watch?v=XfELJU1mRMg"
+        description:
+            "The Aegis Robotic Arm is a 6DoF robotic arm designed for precision manipulation and advanced motion control. Our initial prototype, standing at 60cm, is based on the Thor robotic arm design and serves as a testbed for kinematics, control algorithms, and real-world automation challenges. As we refine our design, we aim to scale up to a full-scale, industrial-grade metal version, pushing the limits of student-led engineering and robotics research.",
+        images: ["/assets/projects/RoboticArmStock.jpg"],
+        url: "/",
     },
+    // {
+    //     id: "projects",
+    //     title: "Student Projects",
+    //     category: "Robotics",
+    //     description: "Our organization aims to support student projects and research in robotics, electronics, and AI. Whether you're working on an innovative idea, looking for collaborators, or need resources to bring your project to life, we're here to help. If you have a project idea, reach out to us at ualbertarobotics@gmail.com or join us below to get in contact.",
+    //     images: ["/assets/projects/ElectronicsProject.jpg"],
+    //     url: "https://www.youtube.com/watch?v=XfELJU1mRMg"
+    // },
     {
         id: "education",
         title: "Educational Robotics Subteam",
