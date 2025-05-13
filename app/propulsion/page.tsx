@@ -2,6 +2,7 @@
 
 import React, { useRef, ReactNode, Suspense } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Montserrat, Roboto } from "next/font/google";
 import JoinUs from "@/app/components/JoinUs";
 import Footer from "@/app/components/Footer";
@@ -57,7 +58,7 @@ function PulsejetCanvas({
     });
 
     return (
-        <div className="h-[35rem] w-full flex-1">
+        <div className="h-[35rem] w-full flex-1 my-[-150] md:my-0">
             <Canvas
                 camera={{ position: [-2, 0, 8], fov: 45 }}
                 resize={{ scroll: false, debounce: { resize: 0, scroll: 50 } }}
@@ -85,18 +86,21 @@ export default function Page() {
         <div className={`${montserrat.variable} ${roboto.variable}`}>
             <header className="bg-transparent py-4">
                 <div className="flex justify-center items-center">
-                    <Image
-                        src="/assets/Logo.svg"
-                        alt="UARA"
-                        height={50}
-                        width={100}
-                        className={""}/>
+                    <Link href="/">
+                        <Image
+                            src="/assets/Logo.svg"
+                            alt="UARA"
+                            height={50}
+                            width={100}
+                            className={""}/>
+                    </Link>
+
                 </div>
             </header>
 
             {/* HERO */}
             <section
-                className="relative min-h-[95vh] bg-fixed bg-cover bg-center flex items-center"
+                className="relative min-h-[85vh] bg-fixed bg-cover bg-center flex items-center"
                 style={{backgroundImage: "url('/assets/propulsion/propulsionhero.jpg')"}}
             >
                 <div className="absolute inset-0 bg-black/40"/>
@@ -115,7 +119,7 @@ export default function Page() {
                 <div className="container mx-auto px-6 py-10 flex flex-col md:flex-row items-center gap-10">
                     {/* image — cap width so it doesn’t grow past md */}
                     <div className="md:flex-shrink-0">
-                        <img
+                        <Image
                             src="/assets/propulsion/people.jpg"
                             alt="Propulsion team members"
                             className="ml-7 w-full max-w-xs lg:max-w-lg h-auto object-cover rounded-lg shadow-lg"
@@ -156,7 +160,7 @@ export default function Page() {
 
             <Stage
                 number={2}
-                title="Regeneratively‑Cooled Liquid Engine"
+                title="Regeneratively ‑ Cooled Liquid Engine"
                 bg="bg-white"
                 fg="text-neutral-900"
                 align="right"
@@ -223,7 +227,7 @@ function Stage({
             <PulsejetCanvas parent={sectionRef} />
         ) : (
             imageSrc && (
-                <img
+                <Image
                     src={imageSrc}
                     alt=""
                     className="h-[28rem] w-full object-contain"
@@ -265,32 +269,24 @@ function Stage({
             {/* content */}
             <div
                 className={`relative z-10 ${
-                    number === 1 ? "py-10" : "py-24"
+                    number === 1 ? "py-10" : "py-24 mt-8"
                 } container mx-auto px-6 flex flex-col md:flex-row ${
                     align === "right" ? "md:flex-row-reverse" : ""
                 } items-center gap-10`}
             >
-                <div className="md:w-1/2 mt-30">
+                <div className="md:w-1/2 mt-22">
                     <h4
-                        className={`text-lg tracking-widest uppercase mb-2 ${
-                            align === "right" ? "text-right" : "text-left"
-                        }`}
+                        className={`text-lg tracking-widest uppercase mb-2`}
                     >
                         Stage {number}
                     </h4>
                     <h3
-                        className={`font-light mb-6 ${
-                            align === "right"
-                                ? "text-right text-4xl sm:text-5xl"
-                                : "text-left text-4xl sm:text-5xl"
-                        }`}
+                        className={`font-light mb-6 "text-left text-4xl sm:text-5xl`}
                     >
                         {title}
                     </h3>
                     <p
-                        className={`max-w-lg leading-relaxed text-lg ${
-                            align === "right" ? "ml-auto text-right" : ""
-                        }`}
+                        className={`max-w-lg leading-relaxed text-lg `}
                     >
                         {children}
                     </p>
@@ -302,5 +298,3 @@ function Stage({
     );
 }
 
-/* ───── PRELOAD MODEL ───── */
-//useGLTF.preload("/assets/propulsion/pulsejet_v3.gltf");
