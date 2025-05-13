@@ -125,6 +125,7 @@ export default function Projects() {
                                                 src={rowProjects[0].images[0]}
                                                 alt={rowProjects[0].title}
                                                 className="w-full h-full object-cover"
+                                                fill={true}
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-75" />
                                             <div className="absolute bottom-4 left-4">
@@ -156,6 +157,7 @@ export default function Projects() {
                                                 src={rowProjects[1].images[0]}
                                                 alt={rowProjects[1].title}
                                                 className="w-full h-full object-cover"
+                                                fill={true}
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-75" />
                                             <div className="absolute bottom-4 left-4">
@@ -184,6 +186,7 @@ export default function Projects() {
                                             src={rowProjects[0].images[0]}
                                             alt={rowProjects[0].title}
                                             className="w-full h-full object-cover"
+                                            fill={true}
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-75" />
                                         <div className="absolute bottom-4 left-4">

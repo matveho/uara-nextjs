@@ -119,7 +119,7 @@ export default function Page() {
                 <div className="container mx-auto px-6 py-10 flex flex-col md:flex-row items-center gap-10">
                     {/* image — cap width so it doesn’t grow past md */}
                     <div className="md:flex-shrink-0">
-                        <Image
+                        <img
                             src="/assets/propulsion/people.jpg"
                             alt="Propulsion team members"
                             className="ml-7 w-full max-w-xs lg:max-w-lg h-auto object-cover rounded-lg shadow-lg"
@@ -227,7 +227,7 @@ function Stage({
             <PulsejetCanvas parent={sectionRef} />
         ) : (
             imageSrc && (
-                <Image
+                <img
                     src={imageSrc}
                     alt=""
                     className="h-[28rem] w-full object-contain"
