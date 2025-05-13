@@ -46,7 +46,7 @@ function PulsejetModel({ progress }: { progress: MotionValue<number> }) {
 }
 
 /* ───── 3‑D CANVAS WRAPPER ───── */
-function PulsejetCanvas({ parent }: { parent: React.RefObject<HTMLElement> }) {
+function PulsejetCanvas({ parent }: { parent: React.RefObject<HTMLElement> | null}) {
     const { scrollYProgress } = useScroll({
         target: parent,
         offset: ["start end", "center center"],
