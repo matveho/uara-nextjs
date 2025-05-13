@@ -293,8 +293,6 @@ export default function Projects() {
                                 <div className="mt-6  text-center">
                                     <a
                                         href={projects.find((p) => p.id === selectedProject)?.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
                                     >
                                         <button
                                             className="border-2 border-theme1 text-theme2 px-10 py-2 rounded-xl font-medium hover:bg-amber-900"
