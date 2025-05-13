@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"; // Importing Vercel Analytics as <Analitics /> was not defined in the original code
 
 export const metadata: Metadata = {
     title: "UARA | University of Alberta Robotics Association",

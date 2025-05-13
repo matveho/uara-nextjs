@@ -4,6 +4,7 @@ const staticRoutes = [
     "/join-us",
     "/support-us",
     "/calendar",
+    "/propulsion",
 ];
 
 export default function sitemap() {

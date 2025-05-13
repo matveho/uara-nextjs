@@ -1,7 +1,7 @@
-import { useState } from "react";
+import {useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaBars, FaTimes } from "react-icons/fa";
+import {FaBars, FaTimes} from "react-icons/fa";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +32,7 @@ export default function Header() {
                             className="md:hidden block text-white"
                             onClick={toggleMenu}
                         >
-                            <FaBars className="h-6 w-6" />
+                            <FaBars className="h-6 w-6"/>
                         </button>
 
                         {/* Desktop Nav Links (hidden on mobile) */}
@@ -60,14 +60,15 @@ export default function Header() {
 
             {/* Mobile Menu Overlay */}
             {isOpen && (
-                <div className="fixed inset-0 z-50 bg-dark bg-opacity-95 flex flex-col justify-center items-center md:hidden">
+                <div
+                    className="fixed inset-0 z-50 bg-dark bg-opacity-95 flex flex-col justify-center items-center md:hidden">
                     {/* Close icon */}
                     <button
                         type="button"
                         className="absolute top-5 right-5 text-white"
                         onClick={toggleMenu}
                     >
-                        <FaTimes className="h-6 w-6" />
+                        <FaTimes className="h-6 w-6"/>
                     </button>
 
                     {/* Mobile Nav Links */}
