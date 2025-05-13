@@ -5,10 +5,12 @@ import Image from "next/image";
 import { Montserrat, Roboto } from "next/font/google";
 import JoinUs from "@/app/components/JoinUs";
 import Footer from "@/app/components/Footer";
-import { useScroll, MotionValue } from "framer-motion";
+import { useScroll } from "framer-motion";
+/* 3‑D deps no longer needed because model is disabled
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
+*/
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -22,54 +24,17 @@ const roboto = Roboto({
     display: "swap",
 });
 
-/* ───── 3‑D MODEL ───── */
-function PulsejetModel({ progress }: { progress: MotionValue<number> }) {
-    const { scene } = useGLTF("/assets/propulsion/pulsejet_v3.gltf");
-    const groupRef = useRef<THREE.Group>(null);
-
-    const start = { x: 4, y: 2, z: 1.8};
-    const end = { x: 1.2, y: -0.5, z: 0 };        // { x: 6, y: 1, z: 1 };start
-
-    useFrame(() => {
-        if (!groupRef.current) return;
-        const p = progress.get();
-        groupRef.current.rotation.x = start.x + (end.x - start.x) * p;
-        groupRef.current.rotation.y = start.y + (end.y - start.y) * p;
-        groupRef.current.rotation.z = start.z + (end.z - start.z) * p;
-    });
-
-    return (
-        <group ref={groupRef} scale={[6, 6, 6]}>
-            <primitive object={scene} />
-        </group>
-    );
-}
-
-/* ───── 3‑D CANVAS WRAPPER ───── */
-function PulsejetCanvas({ parent } : { parent: React.RefObject<HTMLElement | null>}) {
-    const { scrollYProgress } = useScroll({
-        target: parent,
-        offset: ["start end", "center center"],
-    });
-
-    return (
-        <div className="h-[28rem] w-full flex-1">
-            <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
-                <Suspense fallback={null}>
-                    <PulsejetModel progress={scrollYProgress} />
-                    <OrbitControls enableZoom={false} />
-                    <ambientLight intensity={0.8} />
-                    <directionalLight position={[4, 4, 4]} intensity={0.8} />
-                </Suspense>
-            </Canvas>
-        </div>
-    );
-}
+/* ───── 3‑D CODE COMMENTED OUT ─────
+function PulsejetModel() { … }
+function PulsejetCanvas() { … }
+useGLTF.preload("/assets/propulsion/pulsejet_v3.gltf");
+*/
 
 /* ───── PAGE ───── */
 export default function Page() {
     return (
         <div className={`${montserrat.variable} ${roboto.variable}`}>
+            {/* HEADER */}
             <header className="bg-transparent py-4">
                 <div className="flex justify-center items-center">
                     <Image
@@ -77,16 +42,16 @@ export default function Page() {
                         alt="UARA"
                         height={50}
                         width={100}
-                        className={""}/>
+                    />
                 </div>
             </header>
 
             {/* HERO */}
             <section
                 className="relative min-h-[95vh] bg-fixed bg-cover bg-center flex items-center"
-                style={{backgroundImage: "url('/assets/propulsion/propulsionhero.jpg')"}}
+                style={{ backgroundImage: "url('/assets/propulsion/propulsionhero.jpg')" }}
             >
-                <div className="absolute inset-0 bg-black/40"/>
+                <div className="absolute inset-0 bg-black/40" />
                 <div className="relative z-10 pl-[8%] pb-[2%] pr-5">
           <span className="block text-xl md:text-3xl tracking-widest text-white/80 mb-2">
             UofA Robotics Association
@@ -100,7 +65,6 @@ export default function Page() {
             {/* MISSION */}
             <section className="py-32 bg-black text-white">
                 <div className="container mx-auto px-6 py-10 flex flex-col md:flex-row items-center gap-10">
-                    {/* image — cap width so it doesn’t grow past md */}
                     <div className="md:flex-shrink-0">
                         <img
                             src="/assets/propulsion/people.jpg"
@@ -109,7 +73,6 @@ export default function Page() {
                         />
                     </div>
 
-                    {/* text */}
                     <div className="md:w-1/2 text-left max-w-4xl">
                         <h2 className="md:text-6xl text-5xl font-thin mb-8">To be honest,</h2>
                         <p className="leading-relaxed font-thin md:text-xl text-lg">
@@ -123,7 +86,6 @@ export default function Page() {
                 </div>
             </section>
 
-
             {/* STAGES */}
             <Stage
                 number={1}
@@ -131,7 +93,8 @@ export default function Page() {
                 bg="bg-[#083453]"
                 fg="text-neutral-100"
                 align="left"
-                visualKind="model"
+                visualKind="image"
+                imageSrc="/assets/propulsion/stage1.png"
                 slopeAbove="text-[#083453]"
             >
                 Our first stage is a valveless pulse‑jet engine—perfect practice for
@@ -149,9 +112,9 @@ export default function Page() {
                 align="right"
                 visualKind="image"
                 imageSrc="/assets/propulsion/stage2.png"
-                slopeAbove="text-[#083453]"  /* blends with Stage 1 */
+                slopeAbove="text-[#083453]"
             >
-                Stage 2 transforms pulse‑jet lessons into a kerosene–LOX demonstrator.
+                Stage 2 transforms pulse‑jet lessons into a kerosene–LOX demonstrator.
                 We’ll tackle turbopumps, regenerative cooling and real‑time control
                 software—key technologies on the path to orbital‑class propulsion.
             </Stage>
@@ -173,8 +136,8 @@ export default function Page() {
             </Stage>
 
             {/* CTA & FOOTER */}
-            <JoinUs/>
-            <Footer/>
+            <JoinUs />
+            <Footer />
         </div>
     );
 }
@@ -187,8 +150,8 @@ type StageProps = {
     fg: string;
     align: "left" | "right";
     children: ReactNode;
-    visualKind: "model" | "image";
-    imageSrc?: string;
+    visualKind: "image";               // only image now
+    imageSrc: string;
     slopeAbove?: string;
 };
 
@@ -199,31 +162,13 @@ function Stage({
                    fg,
                    align,
                    children,
-                   visualKind,
                    imageSrc,
                    slopeAbove,
                }: StageProps) {
     const sectionRef = useRef<HTMLElement | null>(null);
 
-    const visual =
-        visualKind === "model" ? (
-            <PulsejetCanvas parent={sectionRef} />
-        ) : (
-            imageSrc && (
-                <img
-                    src={imageSrc}
-                    alt=""
-                    className="h-[28rem] w-full object-contain"
-                    loading="lazy"
-                />
-            )
-        );
-
     return (
-        <section
-            ref={sectionRef}
-            className={`${bg} ${fg} relative overflow-hidden`}
-        >
+        <section ref={sectionRef} className={`${bg} ${fg} relative overflow-hidden`}>
             {/* top slope */}
             {number === 3 && slopeAbove && (
                 <svg
@@ -238,7 +183,6 @@ function Stage({
                     />
                 </svg>
             )}
-
             {number !== 3 && slopeAbove && (
                 <svg
                     className={`absolute -top-[1px] left-0 w-full block ${slopeAbove}`}
@@ -281,11 +225,15 @@ function Stage({
                     </p>
                 </div>
 
-                <div className="md:w-1/2">{visual}</div>
+                <div className="md:w-1/2">
+                    <img
+                        src={imageSrc}
+                        alt=""
+                        className="h-[28rem] w-full object-contain"
+                        loading="lazy"
+                    />
+                </div>
             </div>
         </section>
     );
 }
-
-/* ───── PRELOAD MODEL ───── */
-useGLTF.preload("/assets/propulsion/pulsejet_v3.gltf");
