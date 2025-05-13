@@ -7,7 +7,7 @@ import JoinUs from "@/app/components/JoinUs";
 import Footer from "@/app/components/Footer";
 import { useScroll, MotionValue } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, OrbitControls } from "@react-three/drei";
+import { useGLTF, Bounds,  OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
 const montserrat = Montserrat({
@@ -39,25 +39,37 @@ function PulsejetModel({ progress }: { progress: MotionValue<number> }) {
     });
 
     return (
-        <group ref={groupRef} scale={[6, 6, 6]}>
+        <group ref={groupRef} scale={[7, 7, 7]}>
             <primitive object={scene} />
         </group>
     );
 }
 
 /* ───── 3‑D CANVAS WRAPPER ───── */
-function PulsejetCanvas({ parent } : { parent: React.RefObject<HTMLElement | null>}) {
+function PulsejetCanvas({
+                            parent,
+                        }: {
+    parent: React.RefObject<HTMLElement | null>;
+}) {
     const { scrollYProgress } = useScroll({
         target: parent,
         offset: ["start end", "center center"],
     });
 
     return (
-        <div className="h-[28rem] w-full flex-1">
-            <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
+        <div className="h-[35rem] w-full flex-1">
+            <Canvas
+                camera={{ position: [-2, 0, 8], fov: 45 }}
+                resize={{ scroll: false, debounce: { resize: 0, scroll: 50 } }}
+            >
                 <Suspense fallback={null}>
-                    <PulsejetModel progress={scrollYProgress} />
+                    {/* Bounds keeps the contents fully in‑view at any size */}
+                    <Bounds fit clip observe margin={1}>
+                        <PulsejetModel progress={scrollYProgress} />
+                    </Bounds>
+
                     <OrbitControls enableZoom={false} />
+
                     <ambientLight intensity={0.8} />
                     <directionalLight position={[4, 4, 4]} intensity={0.8} />
                 </Suspense>
@@ -65,6 +77,7 @@ function PulsejetCanvas({ parent } : { parent: React.RefObject<HTMLElement | nul
         </div>
     );
 }
+
 
 /* ───── PAGE ───── */
 export default function Page() {
@@ -251,11 +264,13 @@ function Stage({
 
             {/* content */}
             <div
-                className={`relative z-10 py-24 container mx-auto px-6 flex flex-col md:flex-row ${
+                className={`relative z-10 ${
+                    number === 1 ? "py-10" : "py-24"
+                } container mx-auto px-6 flex flex-col md:flex-row ${
                     align === "right" ? "md:flex-row-reverse" : ""
                 } items-center gap-10`}
             >
-                <div className="md:w-1/2">
+                <div className="md:w-1/2 mt-30">
                     <h4
                         className={`text-lg tracking-widest uppercase mb-2 ${
                             align === "right" ? "text-right" : "text-left"
